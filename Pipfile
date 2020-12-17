@@ -1,0 +1,20 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pylint = "*"
+autopep8 = "*"
+
+[packages]
+django = "*"
+gunicorn = "==20.0.4"
+heroku = "*"
+django-crispy-forms = "*"
+pillow = "*"
+python-decouple = "*"
+psycopg2 = "*"
+
+[requires]
+python_version = "3.8"

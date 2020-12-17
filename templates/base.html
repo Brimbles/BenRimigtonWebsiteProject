@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+{% load static %} 
+<html> 
+<head> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+{% comment %} Styling / CSS / Bootstrap {% endcomment %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<!-- Custom styles for this template -->
+<link href="{% static 'css/base.css' %}" rel="stylesheet"> 
+
+{% comment %} Javascript {% endcomment %}
+<script src="{% static 'js/main.js'%}"></script>
+
+
+<title>BenRimington.com</title> 
+
+</head> 
+
+<header>
+
+  
+    {% comment %} <div class="container"> 
+        <h1 style="color: green">GeeksforGeeks</h1> 
+        <b> 
+          How to change navigation bar color in Bootstrap ? 
+      </b> 
+        <p>The above navigation bars use some of the 
+          default color classes available in Bootstrap4.</p> 
+    </div>  {% endcomment %}
+
+
+
+</header>
+
+
+<body>
+
+
+ <!-- Navbar text is dark and background is light -->
+
+    <!-- Navbar text is light and background is dark -->
+    {% comment %} <nav class="navbar navbar-dark bg-dark">  {% endcomment %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"> 
+          Ben Rimington 
+      </a> 
+  
+          <!-- Links -->
+          <ul class="navbar-nav mr-auto">
+              {% comment %} These links appears all the time {% endcomment %}
+              <a class="nav-link" href="{% url 'home' %}">Home<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{% url 'about' %}">About</a>
+              <a class="nav-link" href="{% url 'blog_home' %}">Blog</a>
+              <a class="nav-link" href="{% url 'project_list' %}">Project Portfolio</a>
+              
+              {% comment %} These links only appear if the user is not logged in {% endcomment %}
+              {% if not user.is_authenticated %}
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+              <a class="nav-link" href="{% url 'register' %}">Sign Up</a> 
+              {%else%}
+              {%endif%}
+
+{% comment %} These links only appear if the user is logged in {% endcomment %}
+              {% if user.is_authenticated %}
+              <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                {% comment %} Only show the site admin link if the user is a superuser {% endcomment %}
+                {% if user.is_superuser %}
+                  <a class="nav-link" href="{% url 'admin:index' %}">Site Admin</a> 
+                {%else%}
+                {%endif%}
+              {%else%}
+              {%endif%}
+
+
+              
+          </ul>
+          
+          <!-- Links -->
+           <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav> 
+  
+
+
+	{% comment %} <div id="content" name="content" class="main"> {% endcomment %}
+		{% comment %} <div class="row justify-content-center"> {% endcomment %}
+			{% comment %} <div class="col-8">
+				<h1 class="mt-2">My Site</h1>
+				<hr class="mt-0 mb-4"> {% endcomment %}
+				{% block content %}
+				{% endblock %}
+			{% comment %} </div> {% endcomment %}
+		{% comment %} </div> {% endcomment %}
+	{% comment %} </div> {% endcomment %}
+
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+ 
+ {% comment %} Don't really like the idea of the footer... {% endcomment %}
+{% comment %} <footer class="footer fixed-bottom container">
+  <hr>
+  <p>© 2020 Ben Rimington | <a href="https://twitter.com/benj_111_uk">@benj_111_uk</a>.</p>
+</footer> {% endcomment %}
+
+{% comment %} </div>
+</div> {% endcomment %}
+</body>
+</html>

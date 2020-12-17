@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% comment %} 
+
+{% endcomment %}
+
+
+{% load static %}
+<h1>Projects</h1>
+<div class="row">
+{% for project in project_list %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <img class="card-img-top" src="{{project.image.url}}">
+            <div class="card-body">
+                <h5 class="card-title">{{ project.title }}</h5>
+                <a href="{% url 'project_detail' project.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}
+ 
