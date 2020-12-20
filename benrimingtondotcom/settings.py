@@ -45,7 +45,9 @@ INSTALLED_APPS = [
     'portfolio.apps.PortfolioConfig',
     'dashboard.apps.DashboardConfig',
     'register.apps.RegisterConfig',
-    "crispy_forms"
+    "crispy_forms",
+    'ckeditor',
+
 ]
 
 MIDDLEWARE = [

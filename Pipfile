@@ -15,6 +15,7 @@ django-crispy-forms = "*"
 pillow = "*"
 python-decouple = "*"
 psycopg2 = "*"
+django-ckeditor = "*"
 
 [requires]
 python_version = "3.8"

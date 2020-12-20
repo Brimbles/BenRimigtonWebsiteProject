@@ -10,7 +10,7 @@
         </div>
         <div class="col-sm">
         <h2 class="card-title">{{ object.title }}</h2>
-        <p>{{ object.author }} | {{ object.created_on}} </p>
+        <p>{{ object.author }} | Published {{ object.created_on}} | Project Created {{ object.project_date}} </p>
         <p>{{project_detail.description|slice:":200" }}</p>
         <p>Technology: {{object.technology|slice:":200" }}</p>
         </div>

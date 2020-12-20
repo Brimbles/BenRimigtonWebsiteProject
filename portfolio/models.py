@@ -1,6 +1,8 @@
 from django.db import models
 from django.urls import reverse #
 from django.contrib.auth.models import User
+from ckeditor.fields import RichTextField
+
 
 # Create a tuple to store the status, this will be used when rendering so that only those in published status will be visible
 STATUS = (
@@ -17,13 +19,14 @@ class Project(models.Model):
         #Thereferenceistothebuilt-inUsermodelthatDjango provides for authentication. 
         on_delete=models.CASCADE, #For all many-to-one relationships such as a ForeignKey we must also specify an on_delete option.
     )
-    description = models.TextField()
+    description = RichTextField(blank=True , null=True) #changed this to rich text field so that we can use the CKeditor rich text editor from within Django admin
     technology = models.CharField(max_length=20)
     # image = models.FilePathField(path="/img")
     # image = models.ImageField(upload_to="img")
     image = models.ImageField(upload_to='{{MEDIA_URL}}images/', null=True)
     updated_on = models.DateTimeField(auto_now= True)
     created_on = models.DateTimeField(auto_now_add=True)
+    project_date = models.DateTimeField(null = True)
     status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
