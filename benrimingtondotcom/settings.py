@@ -25,9 +25,10 @@ SECRET_KEY = config('SECRET_KEY') #Previously the secret key would have been har
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast=bool) #like the secret key, the debug value is also set within the .env environment variable. Note that the config function returns a string value but we want toreturn a bool. that's what the cast bit does.
+DEBUG = config('DEBUG', default=True, cast=bool) #like the secret key, the debug value is also set within the .env environment variable. Note that the config function returns a string value but we want toreturn a bool. that's what the cast bit does.
 
-ALLOWED_HOSTS = ['*']
+#Changed this so that the allowed hosts can be read from the .env file
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
 
 
 # Application definition
