@@ -16,6 +16,7 @@ pillow = "*"
 python-decouple = "*"
 psycopg2 = "*"
 django-ckeditor = "*"
+django-heroku = "*"
 
 [requires]
 python_version = "3.8"
