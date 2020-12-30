@@ -49,11 +49,12 @@ html {
   }
   body {
     
-    background-image: url('/static/images/bg_pano9.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;  /*to make sure the entire element is always covered, set the background-attachment property to fixed: */
-    background-size: cover; /*If you want the background image to cover the entire element, you can set the background-size property to cover.*/
-    background-position: center; /* Center the image */
+    /* background-image: url('/static/images/bg_pano9.png'); */
+    /* background-color: #9A9DA0; */
+    /* background-repeat: no-repeat; */
+    /* background-attachment: fixed; */ /*to make sure the entire element is always covered, set the background-attachment property to fixed: */
+    /*background-size: cover; */        /*If you want the background image to cover the entire element, you can set the background-size property to cover.*/
+    /* background-position: center; */  /* Center the image */
 
     margin-bottom: 60px; /* Margin bottom by footer height */
   }

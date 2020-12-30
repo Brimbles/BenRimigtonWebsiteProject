@@ -14,12 +14,12 @@
 
 
 <div class="container-fluid"> {% comment %} Changed container to container-fluid so that the full width of the page is filled dynamically {% endcomment %}
-    <div class="row">
+    <div class="row">{% comment %} row 1 start{% endcomment %}
 
             <div class="col">
-                <p>I’m Ben.</p>
-                <p>I enjoy making things.</p>
-                <p>I write about learning to code.</p>
+                <p class="text-center">I’m Ben.</p>
+                <p class="text-center">I enjoy making things.</p>
+                <p class="text-center">I write about learning to code.</p>
 
             </div>
 
@@ -38,16 +38,37 @@
                     </div>
             {% endfor %}
 
-            <div class="card mb-4">
-                <div class="card-body">
-                    <h2 class="card-title">Socials</h2>
-
-                </div>
-            </div> 
+           
 
             </div>
         </div>
-    </div>
+    </div>{% comment %} row 1 end{% endcomment %}
+
+    <div class="row"> {% comment %} row 2 start{% endcomment %}
+        <div class="col">
+            <p>About me</p>
+                <p class="text-right">Bla bla bla here's a load of stuff about me.</p>
+                <p class="text-right">Bla bla bla here's a load of stuff about me.</p>
+                <p class="text-right">Bla bla bla here's a load of stuff about me.</p>
+                <p class="text-right">Bla bla bla here's a load of stuff about me.</p> 
+                <p class="text-right">Bla bla bla here's a load of stuff about me.</p>
+
+
+        </div>
+
+        <div class="col"> 
+            <p class="text-left">This could be a photo or something.</p>
+            <p class="text-left">This could be a photo or something.</p>
+            <p class="text-left">This could be a photo or something.</p>
+            <p class="text-left">This could be a photo or something.</p>
+            <p class="text-left">This could be a photo or something.</p>
+            <p class="text-left">This could be a photo or something.</p>
+            <p class="text-left">This could be a photo or something.</p>
+            <p class="text-left">This could be a photo or something.</p>
+            <p class="text-left">This could be a photo or something.</p>
+
+        </div>
+    </div> {% comment %} row 2 end{% endcomment %}
 </div>
 
 
@@ -80,7 +101,7 @@
 
     <footer class="footer">
       <div class="container">
-        <span class="text-muted">Place sticky footer content here.</span>
+        <span class="text-muted">Add Social buttons here. Maybe persist this across all pages in the site </span>
       </div>
     </footer>
 
