@@ -1,121 +1,57 @@
-<!-- templates/home.html -->
 {% extends 'base.html' %}
+{% load static %} 
 
 {% block content %}
+
+
+
 <body>
-	{% comment %} <header class="page-header header container-fluid">
-		<div class="overlay"></div>
-		<div class="description">
-			<h1>Welcome to the Landing Page!</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis. Suspendisse consectetur mi id libero fringilla, in pharetra sem ullamcorper.</p>
-			<button class="btn btn-outline-secondary btn-lg">Tell Me More!</button>
-		</div>
-	</header> {% endcomment %}
 
-
-<div class="container-fluid"> {% comment %} Changed container to container-fluid so that the full width of the page is filled dynamically {% endcomment %}
-    <div class="row">{% comment %} row 1 start{% endcomment %}
-
-            <div class="col">
-                <p class="text-center">I’m Ben.</p>
-                <p class="text-center">I enjoy making things.</p>
-                <p class="text-center">I write about learning to code.</p>
+    <div class="container">
+        <!--vertical align on parent using my-auto, horizontal align on self mx-auto-->
+        <div class="row h-100">
+            <div class="col-sm-8 my-auto">
+                <p>Hi, I’m Ben.</p>
+                <p>I enjoy making things.</p>
+                <p>I post some things which I find interesting.</p>
 
             </div>
+            <div class="col-sm-4 my-auto">
+                {% comment %} <h3>Latest posts</h3> {% endcomment %}
+                {% for blogpost in blogpost_list %}
+                    {% comment %} <div class="card-block">
+                        <p class="card-title">{{ blogpost.title }}</p>
+                        <h6><a href="{% url 'blog_detail' blogpost.slug  %}">Read More &rarr;</a></h6>
+                        
+                    </div> {% endcomment %}
 
-            <div class="col-4">
-            <h3>Latest posts</h3>
-            
-
-
-            {% for blogpost in blogpost_list %}
-
-                    <div class="card-block">
-                        <h4 class="card-title">{{ blogpost.title }}</h4>
-                        {% comment %} <p class="card-text text-muted h6">{{ blogpost.author }} | {{ blogpost.created_on}} </p> {% endcomment %}
-                    {% comment %} <p class="card-text">{{blogpost.content|slice:":50" }}</p> {% endcomment %}
-                     <a href="{% url 'blog_detail' blogpost.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                    <div class="card">
+                    <p class="card-title">{{ blogpost.title }}</p>
+                        <div class="card-body">
+                            <h6><a href="{% url 'blog_detail' blogpost.slug  %}">Read More &rarr;</a></h6>
+                        </div>
                     </div>
-            {% endfor %}
 
-           
 
+                {% endfor %}
+                
             </div>
         </div>
-    </div>{% comment %} row 1 end{% endcomment %}
-
-    <div class="row"> {% comment %} row 2 start{% endcomment %}
-        <div class="col">
-            <p>About me</p>
-                <p class="text-right">Bla bla bla here's a load of stuff about me.</p>
-                <p class="text-right">Bla bla bla here's a load of stuff about me.</p>
-                <p class="text-right">Bla bla bla here's a load of stuff about me.</p>
-                <p class="text-right">Bla bla bla here's a load of stuff about me.</p> 
-                <p class="text-right">Bla bla bla here's a load of stuff about me.</p>
-
-
-        </div>
-
-        <div class="col"> 
-            <p class="text-left">This could be a photo or something.</p>
-            <p class="text-left">This could be a photo or something.</p>
-            <p class="text-left">This could be a photo or something.</p>
-            <p class="text-left">This could be a photo or something.</p>
-            <p class="text-left">This could be a photo or something.</p>
-            <p class="text-left">This could be a photo or something.</p>
-            <p class="text-left">This could be a photo or something.</p>
-            <p class="text-left">This could be a photo or something.</p>
-            <p class="text-left">This could be a photo or something.</p>
-
-        </div>
-    </div> {% comment %} row 2 end{% endcomment %}
-</div>
-
+        {% comment %} <div class="row">
+            <div class="col">
+            here's where a picture will live
+            <img src="{% static 'images/squirrel.jpg'%}">
+            </div>
+        </div> {% endcomment %}
+    </div>
 
 {% comment %} 
-<div class="container">
-    <div class="row">
-        <!-- Blog Entries Column -->
-        <!-- <div class="col-md-8 mt-3 "> -->
-            {% for blogpost in blogpost_list %}
-
-             <div class="card mb-4">
-                <div class="card-body">
-                    <h2 class="card-title">{{ blogpost.title }}</h2>
-                    <p class="card-text text-muted h6">{{ blogpost.author }} | {{ blogpost.created_on}} </p>
-                    <p class="card-text">{{blogpost.content|slice:":30" }}</p>
-                    <a href="{% url 'blog_detail' blogpost.slug  %}" class="btn btn-primary">Read More &rarr;</a>
-                </div>
-            </div> 
-            {% endfor %}
-        <!-- </div> -->
-        
-    </div>
-</div> {% endcomment %}
-
- 
-
 </body>
-</div> 
- 
 
     <footer class="footer">
       <div class="container">
         <span class="text-muted">Add Social buttons here. Maybe persist this across all pages in the site </span>
       </div>
     </footer>
-
-{% comment %} 
-<header class="masthead">
-    <div class="overlay"></div>
-    <div class="container">
-<h1>Home.html title text</h1>
-        <a href="https://github.com/Brimbles" class="btn btn-primary">View github &rarr;</a>
-        <!-- <p class="text-light">We Love Django As much as you do..! &nbsp
-        </p> -->
-
-    </div>
-</header>  {% endcomment %}
-
-
+     {% endcomment %}
 {% endblock content %}

@@ -14,13 +14,11 @@
 {% comment %} Javascript {% endcomment %}
 <script src="{% static 'js/main.js'%}"></script>
 
-
 <title>BenRimington.com</title> 
 
 </head> 
 
-<header>
-
+{% comment %} <header> {% endcomment %}
   
     {% comment %} <div class="container"> 
         <h1 style="color: green">GeeksforGeeks</h1> 
@@ -31,9 +29,7 @@
           default color classes available in Bootstrap4.</p> 
     </div>  {% endcomment %}
 
-
-
-</header>
+{% comment %} </header> {% endcomment %}
 
 
 <body>
@@ -41,50 +37,48 @@
 
  <!-- Navbar text is dark and background is light -->
 
-    <!-- Navbar text is light and background is dark -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    
-        <a class="navbar-brand" href="#"> 
-          {% comment %} Ben Rimington  {% endcomment %}
-      </a> 
+  <!-- Navbar text is light and background is dark -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   
-          <!-- Links -->
-          <ul class="navbar-nav mr-auto">
-              {% comment %} These links appears all the time {% endcomment %}
-              <a class="nav-link" href="{% url 'home' %}">Home<span class="sr-only">(current)</span></a>
-              <a class="nav-link" href="{% url 'about' %}">About</a>
-              <a class="nav-link" href="{% url 'blog_home' %}">Blog</a>
-              <a class="nav-link" href="{% url 'project_list' %}">Project Portfolio</a>
-              
+      <a class="navbar-brand" href="#"> </a> 
 
-              
-              {% comment %} These links only appear if the user is not logged in {% endcomment %}
-              {% comment %} {% if not user.is_authenticated %}
-              <a class="nav-link" href="{% url 'login' %}">Login</a>
-              <a class="nav-link" href="{% url 'register' %}">Sign Up</a> 
-              {%else%}
-              {%endif%} {% endcomment %}
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+            {% comment %} These links appears all the time {% endcomment %}
+            <a class="nav-link" href="{% url 'home' %}">Home<span class="sr-only">(current)</span></a>
+            {% comment %} <a class="nav-link" href="{% url 'about' %}">About</a> {% endcomment %}
+            <a class="nav-link" href="{% url 'blog_home' %}">Posts</a>
+            <a class="nav-link" href="{% url 'project_list' %}">Projects</a>
 
-            {% comment %} These links only appear if the user is logged in {% endcomment %}
-              {% comment %} {% if user.is_authenticated %} {% endcomment %}
-              {% comment %} <a class="nav-link" href="{% url 'logout' %}">Logout</a> {% endcomment %}
-                {% comment %} Only show the site admin link if the user is a superuser {% endcomment %}
-                {% comment %} {% if user.is_superuser %} {% endcomment %}
-                  {% comment %} <a class="nav-link" href="{% url 'admin:index' %}">Site Admin</a>  {% endcomment %}
-                {% comment %} {%else%} {% endcomment %}
-                {% comment %} {%endif%} {% endcomment %}
+
+            
+            {% comment %} These links only appear if the user is not logged in {% endcomment %}
+            {% comment %} {% if not user.is_authenticated %}
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+            <a class="nav-link" href="{% url 'register' %}">Sign Up</a> 
+            {%else%}
+            {%endif%} {% endcomment %}
+
+          {% comment %} These links only appear if the user is logged in {% endcomment %}
+            {% comment %} {% if user.is_authenticated %} {% endcomment %}
+            {% comment %} <a class="nav-link" href="{% url 'logout' %}">Logout</a> {% endcomment %}
+              {% comment %} Only show the site admin link if the user is a superuser {% endcomment %}
+              {% comment %} {% if user.is_superuser %} {% endcomment %}
+                {% comment %} <a class="nav-link" href="{% url 'admin:index' %}">Site Admin</a>  {% endcomment %}
               {% comment %} {%else%} {% endcomment %}
               {% comment %} {%endif%} {% endcomment %}
+            {% comment %} {%else%} {% endcomment %}
+            {% comment %} {%endif%} {% endcomment %}
 
 
-              
-          </ul>
-          
-          <!-- Links -->
-           <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+            
+        </ul>
+        
+        <!-- Links -->
+          {% comment %} <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form> {% endcomment %}
     </nav> 
   
 
