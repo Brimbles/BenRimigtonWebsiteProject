@@ -13,6 +13,5 @@ class HomePageView(generic.ListView):
 class AboutPageView(TemplateView):  # new
     template_name = 'about.html'
 
-
 # class PostsHomePageView(TemplateView):  # new
 #     template_name = 'postshome.html'

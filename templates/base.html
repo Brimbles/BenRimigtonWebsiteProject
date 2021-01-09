@@ -6,31 +6,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+{% block styles %}
+{% endblock %}
+
 {% comment %} Styling / CSS / Bootstrap {% endcomment %}
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <!-- Custom styles for this template -->
 <link href="{% static 'css/base.css' %}" rel="stylesheet"> 
 
+
 {% comment %} Javascript {% endcomment %}
-<script src="{% static 'js/main.js'%}"></script>
+{% comment %} <script src="{% static 'js/main.js'%}"></script> {% endcomment %}
 
 <title>BenRimington.com</title> 
 
 </head> 
-
-{% comment %} <header> {% endcomment %}
-  
-    {% comment %} <div class="container"> 
-        <h1 style="color: green">GeeksforGeeks</h1> 
-        <b> 
-          How to change navigation bar color in Bootstrap ? 
-      </b> 
-        <p>The above navigation bars use some of the 
-          default color classes available in Bootstrap4.</p> 
-    </div>  {% endcomment %}
-
-{% comment %} </header> {% endcomment %}
-
 
 <body>
 
@@ -40,7 +30,8 @@
   <!-- Navbar text is light and background is dark -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   
-      <a class="navbar-brand" href="#"> </a> 
+      <a class="navbar-brand" href="#"> </a> <!--navbar-brand can be a logo or something that will sit in the navbar - it's optional-->
+      
 
         <!-- Links -->
         <ul class="navbar-nav mr-auto">

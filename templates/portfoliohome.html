@@ -1,27 +1,42 @@
+
 {% extends 'base.html' %}
 
-{% block content %}
-
-{% comment %} 
-
-{% endcomment %}
 
 
 {% load static %}
-<h1>Projects</h1>
-<div class="row">
-{% for project in project_list %}
-    <div class="col-md-4">
-        <div class="card mb-2">
-            <img class="card-img-top" src="{{project.image.url}}">
-            <div class="card-body">
-                <h5 class="card-title">{{ project.title }}</h5>
-                <a href="{% url 'project_detail' project.slug  %}" class="btn btn-primary">Read More &rarr;</a>
-                </a>
+
+{% comment %} ************ Custom CSS for this page *************** {% endcomment %}
+{% block styles %}
+    <link href="{% static 'css/album.css' %}" rel="stylesheet"> 
+{% endblock styles %} 
+
+
+
+{% block content %}
+    
+
+<h6>TEEEEEEEEESSSSSSSST</h6>
+<h5>TEEEEEEEEESSSSSSSST</h5>
+
+<body>
+
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row h-100">
+            {% for project in project_list %}
+            <div class="col-mb-4 box-shadow">
+                <div class="card mb-2">
+                    <img class="card-img-top" src="{{project.image.url}}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.title }}</h5>
+                        <a href="{% url 'project_detail' project.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                        </a>
+                    </div>
+                </div>
             </div>
+            {% endfor %}
         </div>
     </div>
-    {% endfor %}
 </div>
 
 {% endblock content %}
