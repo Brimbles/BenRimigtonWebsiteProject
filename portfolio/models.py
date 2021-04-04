@@ -23,7 +23,7 @@ class Project(models.Model):
     technology = models.CharField(max_length=20)
     # image = models.FilePathField(path="/img")
     # image = models.ImageField(upload_to="img")
-    image = models.ImageField(upload_to='{{MEDIA_URL}}images/', blank=True)
+    image = models.ImageField(upload_to='{{MEDIA_URL}}images/', default='6782.jpg', blank=True)
     updated_on = models.DateTimeField(auto_now= True)
     created_on = models.DateTimeField(auto_now_add=True)
     project_date = models.DateTimeField(null = True)
