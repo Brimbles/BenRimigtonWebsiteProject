@@ -17,6 +17,14 @@ Charcoal
 */
 
 
+.navbar-brand,
+.navbar-nav li a {
+    line-height: 150px;
+    height: 150px;
+    padding-top: 0;
+}
+
+
 /******************************** Fonts ******************************/
 h1, h2, h3 {
   font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
@@ -40,7 +48,7 @@ p {
   height: 15vw;
   object-fit: cover;
 }
-
+ 
 
 /******************************** Misc ******************************/
 
