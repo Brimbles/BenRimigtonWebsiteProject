@@ -26,13 +26,13 @@
     <div class="col-md-4">
         <div class="card mb-2">
             <img class="card-img-top" 
-            {% if person.image %} <!-- check that an image exists before trying to use it -->
+            {% if project.image %} check that an image exists before trying to use it
             src="{{project.image.url}}"
             {% endif %}
             >
             <div class="card-body">
                 <h5 class="card-title">{{ project.title }}</h5>
-                <p class="card-text">{{ project.description }}</p>
+                <p class="card-text">{{ project.description|truncatewords:10 }}</p>
                 <!-- <a href="{% url 'project_detail' project.pk %}" -->
                 <a href="{% url 'project_detail' project.slug  %}" class="btn btn-primary">Read More &rarr;</a>
                     <!-- class="btn btn-primary"> -->

@@ -6,13 +6,21 @@
 <div class="container">
     <div class="row">
         <div class="col-sm">
-        <img src="{{object.image.url}}" alt="Card image cap">
-        </div>
-        <div class="col-sm">
-        <h2 class="card-title">{{ object.title }}</h2>
-        <p>{{ object.author }} | Published {{ object.created_on}} | Project Created {{ object.project_date}} </p>
-        <p>{{project_detail.description|slice:":200" }}</p>
-        <p>Technology: {{object.technology|slice:":200" }}</p>
+            <div class="card mb-2"></div>
+                <!-- <img src="{{object.image.url}}" alt="Card image cap"> -->
+
+                <img class="card-img-top" 
+                {% if object.image %} check that an image exists before trying to use it
+                src="{{object.image.url}}"
+                {% endif %}
+                >
+
+                <div class="col-sm">
+                <h2 class="card-title">{{ object.title }}</h2>
+                <p>{{ object.author }} | Published {{ object.created_on}} | Project Created {{ object.project_date}} </p>
+                <p>{{project_detail.description|slice:":200" }}</p>
+                <p>Technology: {{object.technology|slice:":200" }}</p>
+            </div>
         </div>
         
     </div>
