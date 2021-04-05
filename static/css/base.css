@@ -17,10 +17,13 @@ Charcoal
 */
 
 
+
+
+
 .navbar-brand,
 .navbar-nav li a {
-    line-height: 150px;
-    height: 150px;
+    line-height: 70px;
+    height: 70px;
     padding-top: 0;
 }
 
@@ -77,9 +80,11 @@ html, body {
 } */
 
 /* show border around full height container */
-.h-100 {
-  /* border: 1px dotted #cc2222; */
+/*.h-100 {
+  border: 1px dotted #cc2222; 
 }
+*/
+
 
 body {
     
