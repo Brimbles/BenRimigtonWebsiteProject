@@ -17,27 +17,30 @@
                 <p>I enjoy making things.</p>
                 <p>You'll find a few projects and posts around here</p>
 
-            </div>
-            <div class="col-sm-4 my-auto">
-                {% comment %} <h3>Latest posts</h3> {% endcomment %}
-                {% for blogpost in blogpost_list %}
-                         <div class="card-block">
+
+                <!-- commented this out as there's no need for a preview on the first page -->
+            <!-- </div> -->
+            <!-- <div class="col-sm-4 my-auto"> -->
+                <!-- {% comment %} <h3>Latest posts</h3> {% endcomment %} -->
+                <!-- {% for blogpost in blogpost_list %} -->
+                         <!-- <div class="card-block"> -->
                         <!-- <p class="card-title">{{ blogpost.title }}</p>  -->
                          <!-- <h6><a href="{% url 'blog_detail' blogpost.slug  %}">Read More &rarr;</a></h6>  -->
                         
-                    </div> 
+                    <!-- </div>  -->
 
-                    <div class="card">
-                    <p class="card-title">{{ blogpost.title }}</p>
-                        <div class="card-body">
-                            <h6><a href="{% url 'blog_detail' blogpost.slug  %}">Read More &rarr;</a></h6>
-                        </div>
-                    </div>
+                    <!-- <div class="card"> -->
+                    <!-- <p class="card-title">{{ blogpost.title }}</p> -->
+                        <!-- <div class="card-body"> -->
+                            <!-- <p> {{ blogpost.created_on}} </p> -->
+                            <!-- <h6><a href="{% url 'blog_detail' blogpost.slug  %}">Read More &rarr;</a></h6> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                <!-- {% endfor %} -->
+            <!-- </div> -->
 
 
-                {% endfor %}
-                
-            </div>
+
         </div>
             <div class="row">
             <div class="col">

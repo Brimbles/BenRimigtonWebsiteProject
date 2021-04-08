@@ -47,7 +47,7 @@ p {
 
 /******************************** Bootstrap cards (9)eg make images same size) ******************************/
 .card-img-top {
-  width: 15vw;
+  width: 100%;
   height: 15vw;
   object-fit: cover;
 }

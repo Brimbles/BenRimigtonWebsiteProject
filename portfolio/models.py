@@ -23,14 +23,19 @@ class Project(models.Model):
     technology = models.CharField(max_length=20)
     # image = models.FilePathField(path="/img")
     # image = models.ImageField(upload_to="img")
-    image = models.ImageField(upload_to='{{MEDIA_URL}}images/', default='6782.jpg', blank=True)
+    # image = models.ImageField(upload_to='{{MEDIA_URL}}images/', default='6782.jpg', blank=True)
+    image0 = models.ImageField(upload_to='{{MEDIA_URL}}images/', blank=True)
+    image1 = models.ImageField(upload_to='{{MEDIA_URL}}images/', blank=True)
+    image2 = models.ImageField(upload_to='{{MEDIA_URL}}images/', blank=True)
+    image3 = models.ImageField(upload_to='{{MEDIA_URL}}images/', blank=True)
+    image4 = models.ImageField(upload_to='{{MEDIA_URL}}images/', blank=True)
+    image5 = models.ImageField(upload_to='{{MEDIA_URL}}images/', blank=True)
+    # image = models.FileField(blank=True) #New version as of 06/04/2021 to allow multiple images to be uploaded
     updated_on = models.DateTimeField(auto_now= True)
     created_on = models.DateTimeField(auto_now_add=True)
     project_date = models.DateTimeField(null = True)
     status = models.IntegerField(choices=STATUS, default=0)
 
-    class Meta:
-        ordering = ['-created_on']
 
 # This bit below is how the name of the project is shown in the list of projects in Django admin
     def __str__(self):
@@ -39,3 +44,15 @@ class Project(models.Model):
     #This allows the urlpattern with name 'project_detail' 
     def get_absolute_url(self):
         return reverse('project_detail', kwargs={'slug': self.slug}) # new
+
+    class Meta:
+        ordering = ['-created_on']
+
+
+# class ProjectImage(models.Model): #added this 05/04/2021. This new model will allow for multiple images( or files ) to be stored against each project
+#     project = models.ForeignKey(Project, default=None, on_delete=models.CASCADE)
+#     # images = models.FileField(upload_to = '{{MEDIA_URL}}images/')
+#     images = models.FileField(upload_to = 'images/')
+
+#     def __str__(self):
+#         return self.project.title

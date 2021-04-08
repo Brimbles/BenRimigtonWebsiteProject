@@ -19,7 +19,7 @@
             {% comment %} <div class="card mb-4"> {% endcomment %}
                 <div class="card-body">
                     <h5 class="card-title">{{ blogpost.title }}</h5>
-                    <p class="card-text text-muted h6">{{ blogpost.author }} | {{ blogpost.created_on}} </p>
+                    <p class="card-text text-muted h6">{{ blogpost.created_on}} </p>
                     <p class="card-text">{{blogpost.content|slice:":200" }}</p>
                     <a href="{% url 'blog_detail' blogpost.slug  %}" class="btn btn-primary">Read More &rarr;</a>
                 </div>
