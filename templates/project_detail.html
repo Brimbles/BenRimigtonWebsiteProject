@@ -10,8 +10,8 @@
                 <!-- <img src="{{object.image.url}}" alt="Card image cap"> -->
 
                 <img class="card-img-top" 
-                {% if object.image %} check that an image exists before trying to use it
-                src="{{object.image.url}}"
+                {% if object.image0 %} check that an image exists before trying to use it
+                src="{{object.image0.url}}"
                 {% endif %}
                 >
 
@@ -19,6 +19,35 @@
                 <h2 class="card-title">{{ object.title }}</h2>
                 <p>{{ object.author }} | Published {{ object.created_on}} | Project Created {{ object.project_date}} </p>
                 <p>{{project_detail.description|slice:":200" }}</p>
+                
+                <!-- If project has multiple parts, they can all be added along with their images -->
+                <p>{{object.projectpart1text}}</p>
+                <img
+                {% if object.image1 %} check that an image exists before trying to use it
+                src="{{object.image1.url}}" alt="" srcset=""    
+                {% endif %}
+                >
+                <p>{{object.projectpart2text}}</p>
+                <img
+                {% if object.image2 %} check that an image exists before trying to use it
+                src="{{object.image2.url}}" alt="" srcset=""    
+                {% endif %}
+                >
+                <img
+                {% if object.image3 %} check that an image exists before trying to use it
+                src="{{object.image3.url}}" alt="" srcset=""    
+                {% endif %}
+                >
+                <img
+                {% if object.image4 %} check that an image exists before trying to use it
+                src="{{object.image4.url}}" alt="" srcset=""    
+                {% endif %}
+                >
+                <img
+                {% if object.image5 %} check that an image exists before trying to use it
+                src="{{object.image5.url}}" alt="" srcset=""    
+                {% endif %}
+                >
                 <p>Technology: {{object.technology|slice:":200" }}</p>
             </div>
         </div>

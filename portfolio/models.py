@@ -19,18 +19,23 @@ class Project(models.Model):
         #Thereferenceistothebuilt-inUsermodelthatDjango provides for authentication. 
         on_delete=models.CASCADE, #For all many-to-one relationships such as a ForeignKey we must also specify an on_delete option.
     )
-    description = RichTextField(blank=True , null=True) #changed this to rich text field so that we can use the CKeditor rich text editor from within Django admin
-    technology = models.CharField(max_length=20)
-    # image = models.FilePathField(path="/img")
-    # image = models.ImageField(upload_to="img")
-    # image = models.ImageField(upload_to='{{MEDIA_URL}}images/', default='6782.jpg', blank=True)
     image0 = models.ImageField(upload_to='{{MEDIA_URL}}images/', blank=True)
+
+    description = RichTextField(blank=True , null=True) #changed this to rich text field so that we can use the CKeditor rich text editor from within Django admin
+
     image1 = models.ImageField(upload_to='{{MEDIA_URL}}images/', blank=True)
+    projectpart1text = RichTextField(blank=True , null=True) 
     image2 = models.ImageField(upload_to='{{MEDIA_URL}}images/', blank=True)
+    projectpart2text = RichTextField(blank=True , null=True) 
     image3 = models.ImageField(upload_to='{{MEDIA_URL}}images/', blank=True)
+    projectpart3text = RichTextField(blank=True , null=True) 
     image4 = models.ImageField(upload_to='{{MEDIA_URL}}images/', blank=True)
+    projectpart4text = RichTextField(blank=True , null=True) 
     image5 = models.ImageField(upload_to='{{MEDIA_URL}}images/', blank=True)
-    # image = models.FileField(blank=True) #New version as of 06/04/2021 to allow multiple images to be uploaded
+    projectpart5text = RichTextField(blank=True , null=True) 
+
+    technology = models.CharField(max_length=20,blank=True)
+
     updated_on = models.DateTimeField(auto_now= True)
     created_on = models.DateTimeField(auto_now_add=True)
     project_date = models.DateTimeField(null = True)
